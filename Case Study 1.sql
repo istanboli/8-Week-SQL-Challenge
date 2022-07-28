@@ -22,6 +22,18 @@ join menu
 on sales.product_id=menu.product_id
 group by(customer_id)
 
+4 - A-What is the most purchased item on the menu and  B- how many times was it purchased by all customers?
+A- SELECT 
+ (COUNT(s.product_id)) AS most_purchased, 
+  product_name
+FROM sales  AS s
+JOIN menu AS m
+ON s.product_id = m.product_id
+
+GROUP BY s.product_id, product_name
+ORDER BY most_purchased DESC;
+B- 
+#just add limit 1 
 
 
 
