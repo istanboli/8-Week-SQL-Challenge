@@ -35,6 +35,14 @@ ORDER BY most_purchased DESC;
 B- 
 #just add limit 1 
 
+5 -Which item was the most popular for each customer?
+
+select sales.customer_id,menu.product_name,count(sales.product_id)as  pupoulr
+from sales
+join menu
+on sales.product_id= menu.product_id
+group by product_name,customer_id
+order by  pupoulr  desc
 
 
 
